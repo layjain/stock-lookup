@@ -5,6 +5,8 @@
 </head>
 <body>
     <h1>Stock Lookup Result</h1>
+    <h3>52 week high: {{ high|safe }}</h3>
+    <h3>52 week low: {{ low|safe }}</h3>
     <div id="chart_div">
         {{ chart_div|safe }}
     </div>

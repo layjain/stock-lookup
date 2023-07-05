@@ -21,8 +21,9 @@ def stock_lookup():
 
         fig.update_layout(title=f'{symbol} - 52 Week Chart', xaxis_rangeslider_visible=False)
         chart_div = fig.to_html(full_html=False)
-
-        return render_template('result.html', chart_div=chart_div)
+        high = max(history['High'])
+        low = max(history['Low'])
+        return render_template('result.html', chart_div=chart_div, high=high, low=low)
     return render_template('index.html')
 
 if __name__ == '__main__':
